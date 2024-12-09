@@ -43,7 +43,7 @@ export default function Articles() {
 				{articles && articles.map((article: any) => (
 					<div key={Math.random()} className="[&>*]:hyphens-auto [&>*]break-all">
 						<Link href={`/${article.Category.toLowerCase()}s/${article.documentId}`}>
-							<img className="cursor-pointer w-full h-72 object-cover" src={`http://localhost:1337${article.FeaturedImage.url}`} />
+							<img className="cursor-pointer w-full h-72 object-cover" src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_PATH}${article.FeaturedImage[0].url.slice(1)}`} />
 						</Link>
 						<div className="mt-2">
 							{generateTagsHtml(article.Tags)}

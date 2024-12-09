@@ -5,8 +5,8 @@ import { StewartsPickupLocation } from "../components/stewarts-pickup-location";
 import { getSortedTownsWithPickups, getStewartsPickups } from "./utils"
 
 export default async function PickupLocations() {
-	const townPickupLocations = await getSortedTownsWithPickups();
-	const stewartsPickupLocations = await getStewartsPickups();
+	const townPickupLocations = (await getSortedTownsWithPickups()) ?? [];
+	const stewartsPickupLocations = (await getStewartsPickups()) ?? [];
 	return (
 		<>
 			<NavBar />

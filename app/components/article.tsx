@@ -90,7 +90,7 @@ export default async function Article({ params, type }: { params: any, type: str
 						</div>
 					</div>
 					<h1 className="uppercase font-anton text-5xl">{category}: {review.Title}</h1>
-					<img className="object-cover w-full" src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_PATH}${review.FeaturedImage.url}`} />
+					<img className="object-cover w-full" src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_PATH}${review.FeaturedImage[0].url.slice(1)}`} />
 					<hr className="border-t-black"></hr>
 					<h1 className="text-2xl uppercase font-anton">"{review.FeaturedQuote}"</h1>
 					<ContentRenderer content={content} />

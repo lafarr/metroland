@@ -27,8 +27,8 @@ const HeroCarousel = (props: any) => {
 				>
 					<div className="relative w-full h-full">
 						<img
-							src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_PATH}${hero.FeaturedImage.url}`}
-							alt=''
+							src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_PATH}${hero.FeaturedImage[0].url.slice(1)}`}
+							alt={''}
 							className="w-full h-full object-cover"
 						/>
 						<div className="absolute bg-black opacity-40 inset-0 h-full w-full"></div>
