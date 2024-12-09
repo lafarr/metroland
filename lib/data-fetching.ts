@@ -26,7 +26,7 @@ export async function getMostRecentArticles() {
 
 // TODO: Properly type this
 function sortArticles(articles: any[]) {
-	articles.sort(function(a, b) {
+	articles?.sort(function(a, b) {
 		const aDate = new Date(a.publishedAt);
 		const bDate = new Date(b.publishedAt);
 
@@ -111,7 +111,7 @@ export async function getMostRecentSocialMediaPosts() {
 	// TODO: Add error handling
 	if (!response.ok) { }
 
-	const posts = (await response.json()).data;
+	const posts = (await response.json()).data || [];
 	posts.sort((a: any, b: any) => {
 		const aDate = new Date(a.publishedAt);
 		const bDate = new Date(b.publishedAt);

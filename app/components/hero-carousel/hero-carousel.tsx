@@ -17,7 +17,7 @@ const HeroCarousel = (props: any) => {
 
 	return (
 		<div className="relative w-full h-[90vh] overflow-hidden">
-			{props.heroes.map((hero: any, index: any) => (
+			{props.heroes?.map((hero: any, index: any) => (
 				<div
 					key={index}
 					className={`absolute w-full h-full transition-transform duration-500 ease-in-out`}
