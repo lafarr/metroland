@@ -14,7 +14,7 @@ export default async function SocialMediaPosts() {
 				{posts.map((ele: any) => {
 					return (
 						<a href={ele.Link} className="w-full">
-							<img className="object-cover w-full h-full opacity-50" src={`${process.env.NEXT_PUBLIC_CMS_PATH}${ele.Thumbnail[0].url.slice(1)}`} alt="" />
+							<img className="object-cover w-full h-full opacity-50" src={`${process.env.NEXT_PUBLIC_CMS_PATH}/${ele.Thumbnail[0].url.slice(1)}`} alt="" />
 							{ele.Type === 'Video' && <FontAwesomeIcon className="h-8 w-8 relative bottom-[calc(50%+1rem)] left-[calc(50%-1rem)] text-neutral-200" icon={faPlay} />}
 						</a>
 					)
